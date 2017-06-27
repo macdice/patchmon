@@ -21,10 +21,10 @@
 # TODO: Support git-am?
 
 # The place where *.patch files and *.patchset directories live
-PATCHES=/home/munro/patches
+PATCHES=$HOME/patches
 
 # The place where postgresql is checked out
-WORKING_DIR=/home/munro/patches/postgresql
+WORKING_DIR=$HOME/patches/postgresql
 
 # Pull upstream changines to master branch
 cd $WORKING_DIR
