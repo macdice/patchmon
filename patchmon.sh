@@ -44,6 +44,6 @@ for patchset in $(find $PATCHES -maxdepth 1 -name '*.patchset' -print) ; do
   git checkout . > /dev/null
   git clean -fd > /dev/null
   for patch in $patchset/*.patch ; do
-    patch --silent -p1 < "$patch" || echo "Failed to apply $patch" ; break
+    patch --silent -p1 < "$patch" || echo "Failed to apply $patch"
   done
 done
