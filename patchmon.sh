@@ -30,7 +30,7 @@ WORKING_DIR=$HOME/patches/postgresql
 cd $WORKING_DIR
 git checkout . > /dev/null
 git clean -fd > /dev/null
-git pull > /dev/null
+git pull -q
 
 # Find all patches named *.patch:
 for patch in $(find $PATCHES -maxdepth 1 -name '*.patch' -print) ; do
