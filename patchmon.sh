@@ -35,7 +35,7 @@ git pull -q
 # Find all patches named *.patch:
 for patch in $(find $PATCHES -maxdepth 1 -name '*.patch' -print) ; do
   # for single patches we can use dry run
-  patch --silent --dry-run -p1 < "$patch" || echo "Failed to apply $patch"
+  patch --batch --silent --dry-run -p1 < "$patch" || echo "Failed to apply $patch"
 done
 
 # Find all patch sets named *.patchset:
@@ -44,6 +44,6 @@ for patchset in $(find $PATCHES -maxdepth 1 -name '*.patchset' -print) ; do
   git checkout . > /dev/null
   git clean -fd > /dev/null
   for patch in $patchset/*.patch ; do
-    patch --silent -p1 < "$patch" || echo "Failed to apply $patch"
+    patch --batch --silent -p1 < "$patch" || echo "Failed to apply $patch"
   done
 done
